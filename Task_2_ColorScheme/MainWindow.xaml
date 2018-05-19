@@ -1,0 +1,32 @@
+﻿<Window x:Class="Task_2_ColorScheme.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task_2_ColorScheme"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <Button Name="btnChangeLogin" Click="btnChangeLogin_Click" Margin="3">Change login</Button>
+        </StackPanel>
+        <Grid Name="gridForLogin" Background="CadetBlue">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel.Background>White</StackPanel.Background>
+                <TextBlock Margin="10, 10, 10, 5">Select login:</TextBlock>
+                <RadioButton Name="rbtnJohn"
+                             Click="rbtn_Click"
+                             Checked="rbtnJohn_Checked"
+                             Margin="10, 3">John</RadioButton>
+                <RadioButton Name="rbtnDavid"
+                             Click="rbtn_Click"
+                             Checked="rbtnDavid_Checked"
+                             Margin="10, 3">David</RadioButton>
+                <RadioButton Name="rbtnKevin"
+                             Click="rbtn_Click"
+                             Checked="rbtnKevin_Checked"
+                             Margin="10, 3, 10, 10">Kevin</RadioButton>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
