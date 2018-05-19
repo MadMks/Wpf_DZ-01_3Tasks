@@ -17,8 +17,13 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
         </Grid>
-        <Canvas>
-            <Button Name="btnRun" Padding="8">Click me</Button>
+        <Canvas Name="canvas">
+            <Grid Name="fieldAround" 
+                  MouseEnter="fieldAround_MouseEnter"
+                  MouseMove="fieldAround_MouseMove" Background="CadetBlue">
+                <Button Name="btnRun" Padding="8" Margin="25">Click me</Button>
+            </Grid>
+            <!--<Button Name="btnRun" Padding="8">Click me</Button>-->
         </Canvas>
     </Grid>
 </Window>
