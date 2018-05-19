@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_1_TextEditor", "Task_1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_2_ColorScheme", "Task_2_ColorScheme\Task_2_ColorScheme.csproj", "{071D38D0-737E-4D56-B1EA-B02FDFBB26D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_3_RunningAwayButton", "Task_3_RunningAwayButton\Task_3_RunningAwayButton.csproj", "{1F82B971-1234-4CE2-9E29-E2496BA36D6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{071D38D0-737E-4D56-B1EA-B02FDFBB26D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{071D38D0-737E-4D56-B1EA-B02FDFBB26D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{071D38D0-737E-4D56-B1EA-B02FDFBB26D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F82B971-1234-4CE2-9E29-E2496BA36D6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F82B971-1234-4CE2-9E29-E2496BA36D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F82B971-1234-4CE2-9E29-E2496BA36D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F82B971-1234-4CE2-9E29-E2496BA36D6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
