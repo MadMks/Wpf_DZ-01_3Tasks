@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Name="btnCut" Click="btnCut_Click" Padding="15">Cut</Button>
+            <Button Name="btnCopy" Click="btnCopy_Click" Padding="15">Copy</Button>
+            <Button Name="btnPaste" Click="btnPaste_Click" Padding="15">Paste</Button>
+        </StackPanel>
+        <TextBox Name="textBox" Grid.Row="1" AcceptsReturn="True">
+            <TextBox.VerticalScrollBarVisibility>
+                <ScrollBarVisibility>Auto</ScrollBarVisibility>
+            </TextBox.VerticalScrollBarVisibility>
+            <TextBox.TextWrapping>Wrap</TextBox.TextWrapping>
+        </TextBox>
     </Grid>
 </Window>

@@ -24,5 +24,20 @@ namespace Task_1_TextEditor
         {
             InitializeComponent();
         }
+
+        private void btnCut_Click(object sender, RoutedEventArgs e)
+        {
+            this.textBox.Cut();
+        }
+
+        private void btnCopy_Click(object sender, RoutedEventArgs e)
+        {
+            this.textBox.Copy();
+        }
+
+        private void btnPaste_Click(object sender, RoutedEventArgs e)
+        {
+            this.textBox.Paste();
+        }
     }
 }
