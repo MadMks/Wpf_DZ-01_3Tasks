@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +20,10 @@ namespace Task_3_RunningAwayButton
     /// </summary>
     public partial class MainWindow : Window
     {
-        private double clientRectWidth;
-        private double clientRectHeight;
+        private const int MARGIN_FORM = 10;
+        private const int STEP_SIZE = 25;
+
         private Random rand;
-        //private int route;
 
         public MainWindow()
         {
@@ -34,6 +34,8 @@ namespace Task_3_RunningAwayButton
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            this.Title = "Running away button";
+
             this.rand = new Random();
 
             Canvas.SetLeft(this.fieldAround, this.GetPointHorizontForCenteringButton());
@@ -54,25 +56,20 @@ namespace Task_3_RunningAwayButton
         {
             if (this.IsMouseCloseToTheButton(e.MouseDevice.GetPosition(null)) == true)
             {
-                this.fieldAround.Background = Brushes.DarkRed;  // TODO delete
 
                 switch (rand.Next(4) + 1)
                 {
                     case 1:
-                        Canvas.SetLeft(this.fieldAround, Canvas.GetLeft(this.fieldAround) - 10);
-                        //this.fieldAround.Background = Brushes.Red;
+                        Canvas.SetLeft(this.fieldAround, Canvas.GetLeft(this.fieldAround) - STEP_SIZE);
                         break;
                     case 2:
-                        Canvas.SetTop(this.fieldAround, Canvas.GetTop(this.fieldAround) - 10);
-                        //this.fieldAround.Background = Brushes.Black;
+                        Canvas.SetTop(this.fieldAround, Canvas.GetTop(this.fieldAround) - STEP_SIZE);
                         break;
                     case 3:
-                        Canvas.SetLeft(this.fieldAround, Canvas.GetLeft(this.fieldAround) + 10);
-                        //this.fieldAround.Background = Brushes.Green;
+                        Canvas.SetLeft(this.fieldAround, Canvas.GetLeft(this.fieldAround) + STEP_SIZE);
                         break;
                     case 4:
-                        Canvas.SetTop(this.fieldAround, Canvas.GetTop(this.fieldAround) + 10);
-                        //this.fieldAround.Background = Brushes.Yellow;
+                        Canvas.SetTop(this.fieldAround, Canvas.GetTop(this.fieldAround) + STEP_SIZE);
                         break;
                     default:
                         MessageBox.Show("Error switch");
@@ -82,8 +79,6 @@ namespace Task_3_RunningAwayButton
 
             if (this.IsButtonFieldNextToTheShapeBorder())
             {
-                this.fieldAround.Background = Brushes.Black;    // TODO delete
-
                 Canvas.SetLeft(this.fieldAround, this.GetPointHorizontForCenteringButton());
                 Canvas.SetTop(this.fieldAround, this.GetPointVerticalForCenteringButton());
             }
@@ -91,12 +86,12 @@ namespace Task_3_RunningAwayButton
 
         private bool IsButtonFieldNextToTheShapeBorder()
         {
-            if (Canvas.GetLeft(this.fieldAround) < 10
-                || Canvas.GetTop(this.fieldAround) < 10
+            if (Canvas.GetLeft(this.fieldAround) < MARGIN_FORM
+                || Canvas.GetTop(this.fieldAround) < MARGIN_FORM
                 || Canvas.GetLeft(this.fieldAround) + this.fieldAround.ActualWidth
-                    > (this.ActualWidth - 10)
+                    > ((this.Content as Grid).RenderSize.Width - MARGIN_FORM) 
                 || Canvas.GetTop(this.fieldAround) + this.fieldAround.ActualHeight
-                    > (this.ActualHeight - 10))
+                    > ((this.Content as Grid).RenderSize.Height - MARGIN_FORM))
             {
                 return true;
             }
@@ -111,6 +106,11 @@ namespace Task_3_RunningAwayButton
                 return true;
             }
             return false;
+        }
+
+        private void btnRun_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Win!");
         }
     }
 }
